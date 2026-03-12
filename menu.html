@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cafe Velvet - Our Menu</title>
+<link rel="icon" type="image/png" href="https://i.ibb.co/XZGGybLg/Screenshot-2026-03-12-224109.png"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec5b13",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221610",
+                        "sage": {
+                            50: "#f4f7f1",
+                            100: "#e5ede0",
+                            200: "#cfdec5",
+                            300: "#abc39c",
+                            400: "#83a571",
+                            500: "#638753",
+                            600: "#4d6a40",
+                            700: "#3e5434",
+                        }
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
+<!-- Full Page Loader -->
+<div id="full-page-loader" class="fixed inset-0 bg-background-light dark:bg-background-dark z-[9999] flex flex-col items-center justify-center transition-opacity duration-500">
+  <div class="mb-4 text-sage-800 dark:text-sage-100 font-serif text-2xl tracking-widest uppercase">Cafe Velvet</div>
+  <div class="w-64 h-1 bg-sage-200 dark:bg-sage-800 overflow-hidden rounded-full">
+    <div id="loader-bar" class="h-full bg-primary w-0 transition-all ease-out"></div>
+  </div>
+</div>
+<script>
+  (function() {
+    document.body.style.overflow = 'hidden';
+    const loadTime = Math.floor(Math.random() * (2000 - 1000 + 1)) + 1000;
+    
+    const bar = document.getElementById('loader-bar');
+    if(bar) {
+      bar.style.transitionDuration = loadTime + 'ms';
+      setTimeout(() => {
+        bar.style.width = '100%';
+      }, 50);
+    }
+
+    setTimeout(() => {
+      const loader = document.getElementById('full-page-loader');
+      if (loader) {
+        loader.style.opacity = '0';
+        document.body.style.overflow = '';
+        setTimeout(() => { if (loader.parentNode) loader.parentNode.removeChild(loader); }, 500);
+      }
+    }, loadTime + 100);
+  })();
+</script>
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<header class="flex items-center justify-between px-6 py-4 md:px-20 lg:px-40 border-b border-sage-200 dark:border-sage-800 sticky top-0 bg-background-light dark:bg-background-dark z-50">
+<div class="flex items-center gap-3">
+<div class="text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl">filter_vintage</span>
+</div>
+<h1 class="text-xl font-bold tracking-tight text-sage-800 dark:text-sage-100 uppercase">Cafe Velvet</h1>
+<span class="text-[10px] text-gray-400 dark:text-gray-600 font-normal">*Not affiliated with any business, this is an example site!</span>
+</div>
+<nav class="hidden md:flex items-center gap-8 text-sm font-semibold uppercase tracking-widest text-sage-600 dark:text-sage-400">
+<a class="hover:text-primary transition-colors" href="index.html">Home</a>
+<a class="text-primary" href="menu.html">Menu</a>
+<a class="hover:text-primary transition-colors" href="contacts.html">Contact</a>
+</nav>
+
+</header>
+<main class="flex-1 px-6 md:px-20 lg:px-40 py-12">
+<div class="max-w-5xl mx-auto">
+<div class="mb-12 text-center md:text-left">
+<h2 class="text-5xl font-black text-sage-800 dark:text-sage-100 mb-2 tracking-tight">Our Menu</h2>
+<p class="text-sage-500 dark:text-sage-400 text-lg italic">Full of hand-crafted flavors &amp; natural ingredients</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-16">
+<section>
+<div class="flex items-center gap-4 mb-6">
+<div class="size-16 rounded-xl overflow-hidden shadow-lg border-2 border-white dark:border-sage-800">
+<img class="w-full h-full object-cover" data-alt="Steaming cup of fresh espresso with crema" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYlAFfvI2vWToIcoUrW7ERniq2pbsQHwPSW1Oob5empcxXoKpo8jcT6P8ci6nIyE1p3z8Ed8OVtG7uRKCO3yvAKQmpkObOA1htPadpzxTQsb5GEfDuwHLHPVOdCvvXIKc2YZ01ejXiI8yIQ1Vzi6EcSZgi0AZXp1D3OmcrbjZrFvxrglRbch1ldaVuvD-zQpDNPKXOi7QvBCO24P-oACpqr9Cb4j4lKNcoqop9bUQKdRqxsnELGs6IRCK1PBukQntMNbBI5_8d-A"/>
+</div>
+<h3 class="text-2xl font-bold text-sage-700 dark:text-sage-200 uppercase tracking-widest border-b-2 border-primary/40 pb-1">Coffee</h3>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between items-baseline group">
+<span class="font-medium text-sage-800 dark:text-sage-200">Espresso</span>
+<div class="flex-grow border-b border-dotted border-sage-300 dark:border-sage-700 mx-2 mb-1"></div>
+<span class="font-bold text-primary">₹139</span>
+</div>
+<div class="flex justify-between items-baseline group relative">
+<div class="flex flex-col">
+<span class="font-medium text-sage-800 dark:text-sage-200">Cappuccino</span>
+<span class="text-[10px] font-bold bg-primary text-white px-2 py-0.5 rounded-full w-fit mt-1 tracking-tighter uppercase">Most Popular</span>
+</div>
+<div class="flex-grow border-b border-dotted border-sage-300 dark:border-sage-700 mx-2 mb-4"></div>
+<span class="font-bold text-primary mb-3">₹189</span>
+</div>
+<div class="flex justify-between items-baseline">
+<span class="font-medium text-sage-800 dark:text-sage-200">Americano</span>
+<div class="flex-grow border-b border-dotted border-sage-300 dark:border-sage-700 mx-2 mb-1"></div>
+<span class="font-bold text-primary">₹159</span>
+</div>
+<div class="flex justify-between items-baseline">
+<span class="font-medium text-sage-800 dark:text-sage-200">Cold Brew</span>
+<div class="flex-grow border-b border-dotted border-sage-300 dark:border-sage-700 mx-2 mb-1"></div>
+<span class="font-bold text-primary">₹209</span>
+</div>
+</div>
+</section>
+<section>
+<div class="flex items-center gap-4 mb-6">
+<div class="size-16 rounded-xl overflow-hidden shadow-lg border-2 border-white dark:border-sage-800">
+<img class="w-full h-full object-cover" data-alt="Elegant tea cup with delicate herbal tea leaves" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAk1JfhpOohrSERLp3djGkNmPgLcZRSMWVYKIR-KW-zgLu8IjoFe7hh1KEdYjRRcwrDpFqjldJSoWpnVcovE_MEwk9AqKGrLB7wqveNtPQtVUynNerpW__7CNn3-bcevWdylHpMWtSgKAuiN_QHxzB4NYYSKK9hZz0rPuXqvIY6evhHIITvneTEETHxwacUGUwAtr7b1H58CYyax_HdhnOs2Tq7hIcLsdPWVRxn6_C3RqGQzn-oknt2VJ_EbpaKool6EI7bh3de_Q"/>
+</div>
+<h3 class="text-2xl font-bold text-sage-700 dark:text-sage-200 uppercase tracking-widest border-b-2 border-primary/40 pb-1">Teas</h3>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between items-baseline group relative">
+<div class="flex flex-col">
+<span class="font-medium text-sage-800 dark:text-sage-200">Earl Grey Tea</span>
+<span class="text-[10px] font-bold bg-primary text-white px-2 py-0.5 rounded-full w-fit mt-1 tracking-tighter uppercase">Most Popular</span>
+</div>
+<div class="flex-grow border-b border-dotted border-sage-300 dark:border-sage-700 mx-2 mb-4"></div>
+<span class="font-bold text-primary mb-3">₹169</span>
+</div>
+<div class="flex justify-between items-baseline">
+<span class="font-medium text-sage-800 dark:text-sage-200">English Breakfast Tea</span>
+<div class="flex-grow border-b border-dotted border-sage-300 dark:border-sage-700 mx-2 mb-1"></div>
+<span class="font-bold text-primary">₹159</span>
+</div>
+<div class="flex justify-between items-baseline">
+<span class="font-medium text-sage-800 dark:text-sage-200">Green Tea</span>
+<div class="flex-grow border-b border-dotted border-sage-300 dark:border-sage-700 mx-2 mb-1"></div>
+<span class="font-bold text-primary">₹179</span>
+</div>
+<div class="flex justify-between items-baseline">
+<span class="font-medium text-sage-800 dark:text-sage-200">Jasmine Tea</span>
+<div class="flex-grow border-b border-dotted border-sage-300 dark:border-sage-700 mx-2 mb-1"></div>
+<span class="font-bold text-primary">₹179</span>
+</div>
+</div>
+</section>
+<section>
+<div class="flex items-center gap-4 mb-6">
+<div class="size-16 rounded-xl overflow-hidden shadow-lg border-2 border-white dark:border-sage-800">
+<img class="w-full h-full object-cover" data-alt="Golden chamomile tea with fresh blossoms" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOpWtLz6AM8ggHSTksuX03V8BAorAPOh-aOtSdyhxqrJ7x34D1265p-prsRtgSBhYg1c-RhVJA-bPxZ-Vu_3PCkn26z7Ggo3z7Oq02Y6gd0juKNSGed5azmmWGa6jWQHxFW8nYMhysN2badd1drCiPb701uPbOWEYkoplYyw4JctZib5-M4C25Q5kxNK7Hj87wUPHFz_UHDd6iHSUQsqNLV-qC06G8c1SWtdQoSy_cki_RjyN2HcUCEEMCBj9eMunwTtGFnwpP2w"/>
+</div>
+<h3 class="text-2xl font-bold text-sage-700 dark:text-sage-200 uppercase tracking-widest border-b-2 border-primary/40 pb-1">Herbal Teas</h3>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between items-baseline group relative">
+<div class="flex flex-col">
+<span class="font-medium text-sage-800 dark:text-sage-200">Chamomile Tea</span>
+<span class="text-[10px] font-bold bg-primary text-white px-2 py-0.5 rounded-full w-fit mt-1 tracking-tighter uppercase">Most Popular</span>
+</div>
+<div class="flex-grow border-b border-dotted border-sage-300 dark:border-sage-700 mx-2 mb-4"></div>
+<span class="font-bold text-primary mb-3">₹179</span>
+</div>
+<div class="flex justify-between items-baseline">
+<span class="font-medium text-sage-800 dark:text-sage-200">Peppermint Tea</span>
+<div class="flex-grow border-b border-dotted border-sage-300 dark:border-sage-700 mx-2 mb-1"></div>
+<span class="font-bold text-primary">₹179</span>
+</div>
+<div class="flex justify-between items-baseline">
+<span class="font-medium text-sage-800 dark:text-sage-200">Hibiscus Tea</span>
+<div class="flex-grow border-b border-dotted border-sage-300 dark:border-sage-700 mx-2 mb-1"></div>
+<span class="font-bold text-primary">₹189</span>
+</div>
+<div class="flex justify-between items-baseline">
+<span class="font-medium text-sage-800 dark:text-sage-200">Ginger Lemon Tea</span>
+<div class="flex-grow border-b border-dotted border-sage-300 dark:border-sage-700 mx-2 mb-1"></div>
+<span class="font-bold text-primary">₹189</span>
+</div>
+</div>
+</section>
+<section>
+<div class="flex items-center gap-4 mb-6">
+<div class="size-16 rounded-xl overflow-hidden shadow-lg border-2 border-white dark:border-sage-800">
+<img class="w-full h-full object-cover" data-alt="Frothy latte with artistic leaf foam art" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBU7AO9CX-_HKprdM9lORedKIv2UHK1TIytwyD_Pbxb4e70hmTMj0uGELCU2L6ZzcvixSJfE0y0CAveje1cIP9XXVNkrQgvVhXjHH7Tvy8yQ97vxF1_WaRoQfUqeKyeHSDsvF__HUoRBi6-OHcpgzL0PUg0b7A6fKFGxxLaf9lpEXvtBOWZlih5Xq69KuC1R2Yj3MI3rhbU-7drmE2eDK2cfx4SZaLnNv_7iWviLN3ip1CLQX41k1F-Vb8G_KTVU5r7sLAjB0AJZQ"/>
+</div>
+<h3 class="text-2xl font-bold text-sage-700 dark:text-sage-200 uppercase tracking-widest border-b-2 border-primary/40 pb-1">Lattes</h3>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between items-baseline group relative">
+<div class="flex flex-col">
+<span class="font-medium text-sage-800 dark:text-sage-200">Vanilla Latte</span>
+<span class="text-[10px] font-bold bg-primary text-white px-2 py-0.5 rounded-full w-fit mt-1 tracking-tighter uppercase">Most Popular</span>
+</div>
+<div class="flex-grow border-b border-dotted border-sage-300 dark:border-sage-700 mx-2 mb-4"></div>
+<span class="font-bold text-primary mb-3">₹219</span>
+</div>
+<div class="flex justify-between items-baseline">
+<span class="font-medium text-sage-800 dark:text-sage-200">Caramel Latte</span>
+<div class="flex-grow border-b border-dotted border-sage-300 dark:border-sage-700 mx-2 mb-1"></div>
+<span class="font-bold text-primary">₹219</span>
+</div>
+<div class="flex justify-between items-baseline">
+<span class="font-medium text-sage-800 dark:text-sage-200">Matcha Latte</span>
+<div class="flex-grow border-b border-dotted border-sage-300 dark:border-sage-700 mx-2 mb-1"></div>
+<span class="font-bold text-primary">₹239</span>
+</div>
+<div class="flex justify-between items-baseline">
+<span class="font-medium text-sage-800 dark:text-sage-200">Hazelnut Latte</span>
+<div class="flex-grow border-b border-dotted border-sage-300 dark:border-sage-700 mx-2 mb-1"></div>
+<span class="font-bold text-primary">₹219</span>
+</div>
+</div>
+</section>
+<section>
+<div class="flex items-center gap-4 mb-6">
+<div class="size-16 rounded-xl overflow-hidden shadow-lg border-2 border-white dark:border-sage-800">
+<img class="w-full h-full object-cover" data-alt="Flaky golden croissants on a rustic plate" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkx02nzzOU8tyFhZ167XnN6-1xPCuhCIE0XItEfiUCKaN81_BPQItQ9SVr32DVtlN5lID8Cu54P1tyafN-6FTlaF9N0N7lwHzxsvze0pEshbWfrAmQ9BJbbTySHPbbke72YPXbzhuktbuy8n6qi2V1S9Cy4UwQxDNurBjKLNsV7scbhW2qy_Ho7IAvH6kAjZ_f8Ps_Y-J-QIjca8OqWnVcjkewPJm9L-cocihY1-jZCWaxKFoJ-fcapnIuq8ZFFUx3gBlnPmQwrA"/>
+</div>
+<h3 class="text-2xl font-bold text-sage-700 dark:text-sage-200 uppercase tracking-widest border-b-2 border-primary/40 pb-1">Pastries</h3>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between items-baseline group relative">
+<div class="flex flex-col">
+<span class="font-medium text-sage-800 dark:text-sage-200">Croissants</span>
+<span class="text-[10px] font-bold bg-primary text-white px-2 py-0.5 rounded-full w-fit mt-1 tracking-tighter uppercase">Most Popular</span>
+</div>
+<div class="flex-grow border-b border-dotted border-sage-300 dark:border-sage-700 mx-2 mb-4"></div>
+<span class="font-bold text-primary mb-3">₹149</span>
+</div>
+<div class="flex justify-between items-baseline">
+<span class="font-medium text-sage-800 dark:text-sage-200">Chocolate Pastries</span>
+<div class="flex-grow border-b border-dotted border-sage-300 dark:border-sage-700 mx-2 mb-1"></div>
+<span class="font-bold text-primary">₹169</span>
+</div>
+<div class="flex justify-between items-baseline">
+<span class="font-medium text-sage-800 dark:text-sage-200">Cinnamon Rolls</span>
+<div class="flex-grow border-b border-dotted border-sage-300 dark:border-sage-700 mx-2 mb-1"></div>
+<span class="font-bold text-primary">₹179</span>
+</div>
+</div>
+</section>
+<section>
+<div class="flex items-center gap-4 mb-6">
+<div class="size-16 rounded-xl overflow-hidden shadow-lg border-2 border-white dark:border-sage-800">
+<img class="w-full h-full object-cover" data-alt="Vibrant avocado toast topped with microgreens" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAp0SYIDSG3e_xCJLd96i71TWjWKxIRJztd432iyyCbDuNdDk41217pIG_p7s9OlXJoHZ9CUlQOnkVKJ3ZCqIhfVSzuZh5WkhCNBG6poIXLOmoh9xqGbGYVQh_qu2m8rc2uHrFUpsVWfV2DIWL3z6yOTxHPzeTi8abVRzFnoShBgTJYl7hy-drx0B2QZNZ7lkKLH0vlTpVLxKXjL3FRR0RSjU_g-DRrCjAr4oP4CDOe5tLJf7B9VqTvMgoET5xH3nw8IRQaHlvmAw"/>
+</div>
+<h3 class="text-2xl font-bold text-sage-700 dark:text-sage-200 uppercase tracking-widest border-b-2 border-primary/40 pb-1">Healthy Food</h3>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between items-baseline group relative">
+<div class="flex flex-col">
+<span class="font-medium text-sage-800 dark:text-sage-200">Avocado Toast</span>
+<span class="text-[10px] font-bold bg-primary text-white px-2 py-0.5 rounded-full w-fit mt-1 tracking-tighter uppercase">Most Popular</span>
+</div>
+<div class="flex-grow border-b border-dotted border-sage-300 dark:border-sage-700 mx-2 mb-4"></div>
+<span class="font-bold text-primary mb-3">₹499</span>
+</div>
+<div class="flex justify-between items-baseline">
+<span class="font-medium text-sage-800 dark:text-sage-200">Fresh Garden Salad</span>
+<div class="flex-grow border-b border-dotted border-sage-300 dark:border-sage-700 mx-2 mb-1"></div>
+<span class="font-bold text-primary">₹399</span>
+</div>
+<div class="flex justify-between items-baseline">
+<span class="font-medium text-sage-800 dark:text-sage-200">Tofu Bowl</span>
+<div class="flex-grow border-b border-dotted border-sage-300 dark:border-sage-700 mx-2 mb-1"></div>
+<span class="font-bold text-primary">₹539</span>
+</div>
+</div>
+</section>
+<section class="md:col-span-2 max-w-2xl mx-auto w-full">
+<div class="flex items-center gap-4 mb-6">
+<div class="size-16 rounded-xl overflow-hidden shadow-lg border-2 border-white dark:border-sage-800">
+<img class="w-full h-full object-cover" data-alt="Smoothie glasses with colorful layers of fruit" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAg9sS8BTQmw2X3Zeeq-L_U0d5G7TVz_dDCbDS7VLZjI1YLHFPJ3oIYAbmJizcfltdXFrif0A7-AEB7q7kWMNsQZj1FGiR9zQTgJe2mDJiidSgMEbhtWW0lU6Kj-0z_kis5T54cOKXfUcWqgQJ52QQ9J55k9SgZn8jMARvYqKXxJyvQ3L7A83tT7Jq1kZVTndIKBeW0fb0QNpWJXJ0-R2ohf6rhr4YTmAQQpey5osmsKSBDGag9I-iv6Kg-hb98uRY1SUr5o4HjNg"/>
+</div>
+<h3 class="text-2xl font-bold text-sage-700 dark:text-sage-200 uppercase tracking-widest border-b-2 border-primary/40 pb-1">Smoothies</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4">
+<div class="flex justify-between items-baseline">
+<span class="font-medium text-sage-800 dark:text-sage-200">Strawberry Banana</span>
+<div class="flex-grow border-b border-dotted border-sage-300 dark:border-sage-700 mx-2 mb-1"></div>
+<span class="font-bold text-primary">₹259</span>
+</div>
+<div class="flex justify-between items-baseline group relative">
+<div class="flex flex-col">
+<span class="font-medium text-sage-800 dark:text-sage-200">Mango Smoothie</span>
+<span class="text-[10px] font-bold bg-primary text-white px-2 py-0.5 rounded-full w-fit mt-1 tracking-tighter uppercase">Most Popular</span>
+</div>
+<div class="flex-grow border-b border-dotted border-sage-300 dark:border-sage-700 mx-2 mb-4"></div>
+<span class="font-bold text-primary mb-3">₹279</span>
+</div>
+<div class="flex justify-between items-baseline">
+<span class="font-medium text-sage-800 dark:text-sage-200">Berry Smoothie</span>
+<div class="flex-grow border-b border-dotted border-sage-300 dark:border-sage-700 mx-2 mb-1"></div>
+<span class="font-bold text-primary">₹269</span>
+</div>
+<div class="flex justify-between items-baseline">
+<span class="font-medium text-sage-800 dark:text-sage-200">Green Detox</span>
+<div class="flex-grow border-b border-dotted border-sage-300 dark:border-sage-700 mx-2 mb-1"></div>
+<span class="font-bold text-primary">₹299</span>
+</div>
+</div>
+</section>
+</div>
+</div>
+</main>
+<footer class="px-6 py-8 border-t border-sage-200 dark:border-sage-800 text-center text-sage-400 dark:text-sage-600 text-sm">
+<p>© 2025 <a href="https://www.aritive.online" target="_blank" class="hover:text-primary transition-colors underline">aritive</a>. All ingredients are locally sourced and organic.</p>
+</footer>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cafe Velvet | Your calm escape from the city~!</title>
+<link rel="icon" type="image/png" href="https://i.ibb.co/XZGGybLg/Screenshot-2026-03-12-224109.png"/>
+<!-- Tailwind CSS v3 with plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&amp;family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            'velvet-green': '#4A5D4E',
+            'velvet-beige': '#F5F2ED',
+            'velvet-brown': '#8C7355',
+            'velvet-white': '#FFFFFF',
+            'leaf-green': '#A3B18A',
+            "primary": "#ec5b13",
+            "background-light": "#f8f6f6",
+            "background-dark": "#221610",
+            "sage": {
+                50: "#f4f7f1",
+                100: "#e5ede0",
+                200: "#cfdec5",
+                300: "#abc39c",
+                400: "#83a571",
+                500: "#638753",
+                600: "#4d6a40",
+                700: "#3e5434",
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            serif: ['Playfair Display', 'serif'],
+            "display": ["Public Sans", "sans-serif"]
+          },
+          borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-typography">
+    body {
+      background-color: #F5F2ED;
+      color: #333;
+    }
+    .hero-overlay {
+      background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.1));
+    }
+  </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
+<!-- Full Page Loader -->
+<div id="full-page-loader" class="fixed inset-0 bg-background-light dark:bg-background-dark z-[9999] flex flex-col items-center justify-center transition-opacity duration-500">
+  <div class="mb-4 text-sage-800 dark:text-sage-100 font-serif text-2xl tracking-widest uppercase">Cafe Velvet</div>
+  <div class="w-64 h-1 bg-sage-200 dark:bg-sage-800 overflow-hidden rounded-full">
+    <div id="loader-bar" class="h-full bg-primary w-0 transition-all ease-out"></div>
+  </div>
+</div>
+<script>
+  (function() {
+    document.body.style.overflow = 'hidden';
+    const loadTime = Math.floor(Math.random() * (2000 - 1000 + 1)) + 1000;
+    
+    const bar = document.getElementById('loader-bar');
+    if(bar) {
+      bar.style.transitionDuration = loadTime + 'ms';
+      setTimeout(() => {
+        bar.style.width = '100%';
+      }, 50);
+    }
+
+    setTimeout(() => {
+      const loader = document.getElementById('full-page-loader');
+      if (loader) {
+        loader.style.opacity = '0';
+        document.body.style.overflow = '';
+        setTimeout(() => { if (loader.parentNode) loader.parentNode.removeChild(loader); }, 500);
+      }
+    }, loadTime + 100);
+  })();
+</script>
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- BEGIN: Navigation -->
+<header class="flex items-center justify-between px-6 py-4 md:px-20 lg:px-40 border-b border-sage-200 dark:border-sage-800 sticky top-0 bg-background-light dark:bg-background-dark z-50">
+<div class="flex items-center gap-3">
+<div class="text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl">filter_vintage</span>
+</div>
+<h1 class="text-xl font-bold tracking-tight text-sage-800 dark:text-sage-100 uppercase">Cafe Velvet</h1>
+<span class="text-[10px] text-gray-400 dark:text-gray-600 font-normal">*Not affiliated with any business, this is an example site!</span>
+</div>
+<nav class="hidden md:flex items-center gap-8 text-sm font-semibold uppercase tracking-widest text-sage-600 dark:text-sage-400">
+<a class="text-primary" href="index.html">Home</a>
+<a class="hover:text-primary transition-colors" href="menu.html">Menu</a>
+<a class="hover:text-primary transition-colors" href="contacts.html">Contact</a>
+</nav>
+
+</header>
+<!-- END: Navigation -->
+<!-- BEGIN: HeroSection -->
+<section class="relative h-screen w-full flex items-center justify-center overflow-hidden" data-purpose="hero-banner">
+<!-- Hero Background Image -->
+<div class="absolute inset-0">
+<img alt="Cafe interior with lush plants and soft sunlight" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUAU2H7XDYSaPBgjDS7nANtSL1snieZ7nqvp83KTDPZVVrACXDEVijQgWXvbVymIqJHKkZ6hGK5IsEiOkP2RTUTKtVv6mzHCooUWjyTXSdS6qJ0xllL6-MqpeobjEw8wF4gWDofy2Rv-MVCzD10rtoAE_x7PHZdBEPlrD0F0ixbDCv3v_LaGsEkbj9kCLU4xYNZsTbZptA6KK7EVnlmiB_70Upyi4TX4kN9AFEJnegqmw2yVGuqwNDeP8jzsFmlRX9Epd9m9rNzA"/>
+<div class="absolute inset-0 hero-overlay"></div>
+</div>
+<!-- Hero Content -->
+<div class="relative z-10 text-center px-4 max-w-4xl">
+<h1 class="font-serif text-5xl md:text-8xl text-velvet-white mb-6 drop-shadow-lg">Cafe Velvet</h1>
+<p class="font-sans text-xl md:text-2xl text-velvet-beige/90 font-light tracking-wide max-w-2xl mx-auto leading-relaxed">
+        A calm space to relax, reconnect, and enjoy healthy flavors.
+      </p>
+</div>
+</section>
+<!-- END: HeroSection -->
+<!-- BEGIN: IntroductionSection -->
+<section class="py-24 px-6 md:py-40 bg-velvet-beige" data-purpose="about-introduction">
+<div class="max-w-3xl mx-auto text-center">
+<h2 class="font-serif text-3xl md:text-4xl text-velvet-green mb-8 italic">Your escape in the city</h2>
+<div class="mb-8 flex justify-center">
+<!-- Minimalist botanical divider -->
+<div class="w-12 h-px bg-leaf-green"></div>
+<div class="mx-4 text-leaf-green">
+<svg class="h-6 w-6" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-7.714 2.143L11 21l-2.286-6.857L1 12l7.714-2.143L11 3z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"></path>
+</svg>
+</div>
+<div class="w-12 h-px bg-leaf-green"></div>
+</div>
+<p class="font-sans text-lg md:text-xl text-gray-600 leading-relaxed font-light">
+        Relax in a calm space filled with greenery, warm coffee, and healthy flavors. Surrounded by plants and natural light, Cafe Velvet is the perfect place to unwind, meet friends, or enjoy a quiet moment to yourself.
+      </p>
+<!-- Image Slider -->
+<div class="mt-16 relative overflow-hidden rounded-2xl" id="menu-slider">
+  <style>
+    #menu-slider .slider-track {
+      display: flex;
+      transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    #menu-slider .slide-item {
+      min-width: calc(100% / 3);
+      padding: 0 6px;
+      box-sizing: border-box;
+    }
+    #menu-slider .slide-item img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 12px;
+      display: block;
+    }
+  </style>
+  <div class="slider-track" id="slider-track">
+    <div class="slide-item"><img alt="Espresso cup" src="https://images.unsplash.com/photo-1510707577719-ae7c14805e3a?w=400&h=400&fit=crop&crop=center"/></div>
+    <div class="slide-item"><img alt="Cappuccino art" src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=400&h=400&fit=crop&crop=center"/></div>
+
+    <div class="slide-item"><img alt="Matcha latte" src="https://images.unsplash.com/photo-1536256263959-770b48d82b0a?w=400&h=400&fit=crop&crop=center"/></div>
+    <div class="slide-item"><img alt="Avocado toast" src="https://images.unsplash.com/photo-1541519227354-08fa5d50c44d?w=400&h=400&fit=crop&crop=center"/></div>
+    <div class="slide-item"><img alt="Berry smoothie" src="https://images.unsplash.com/photo-1553530666-ba11a7da3888?w=400&h=400&fit=crop&crop=center"/></div>
+
+    <div class="slide-item"><img alt="Iced coffee" src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=400&h=400&fit=crop&crop=center"/></div>
+    <div class="slide-item"><img alt="Fresh salad bowl" src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&h=400&fit=crop&crop=center"/></div>
+    <div class="slide-item"><img alt="Herbal tea" src="https://images.unsplash.com/photo-1597318181409-cf64d0b5d8a2?w=400&h=400&fit=crop&crop=center"/></div>
+  </div>
+</div>
+<script>
+  (function() {
+    const track = document.getElementById('slider-track');
+    const items = track.querySelectorAll('.slide-item');
+    const totalItems = items.length;
+    const visibleCount = 3;
+    let currentIndex = 0;
+
+    // Clone the first few slides and append to end for seamless looping
+    for (let i = 0; i < visibleCount; i++) {
+      const clone = items[i].cloneNode(true);
+      track.appendChild(clone);
+    }
+
+    function slideNext() {
+      currentIndex++;
+      track.style.transition = 'transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+      track.style.transform = 'translateX(-' + (currentIndex * (100 / visibleCount)) + '%)';
+
+      // When we reach the cloned slides, snap back to the real ones
+      if (currentIndex >= totalItems) {
+        setTimeout(function() {
+          track.style.transition = 'none';
+          currentIndex = 0;
+          track.style.transform = 'translateX(0%)';
+        }, 620);
+      }
+    }
+
+    setInterval(slideNext, 1000);
+  })();
+</script>
+</div>
+</section>
+<!-- END: IntroductionSection -->
+<!-- BEGIN: BottomSection -->
+<footer class="px-6 py-8 border-t border-sage-200 dark:border-sage-800 text-center text-sage-400 dark:text-sage-600 text-sm">
+<p>© 2025 <a href="https://www.aritive.online" target="_blank" class="hover:text-primary transition-colors underline">aritive</a>. All ingredients are locally sourced and organic.</p>
+</footer>
+<!-- END: BottomSection -->
+</div>
+</div>
+</body></html>

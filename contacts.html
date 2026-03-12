@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contact Us - Cafe Velvet</title>
+<link rel="icon" type="image/png" href="https://i.ibb.co/XZGGybLg/Screenshot-2026-03-12-224109.png"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec5b13",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221610",
+                        "sage": {
+                            50: "#f4f7f1",
+                            100: "#e5ede0",
+                            200: "#cfdec5",
+                            300: "#abc39c",
+                            400: "#83a571",
+                            500: "#638753",
+                            600: "#4d6a40",
+                            700: "#3e5434",
+                        },
+                        "cream": "#fdfaf5",
+                        "moss": "#4a5d4a"
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>body {
+    font-family: "Public Sans", sans-serif
+    }
+.botanical-overlay {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuCQwaXrRu-1pppM4AtgaCCcyvB55WLVoj92fOJoRWS3s7O5W_aC4Q2HgzUO7rX2rf6syNe4TQlR-dIy5F2yIcvIdQpfLpKuksJWYCJt0mTgnKpx8PFCKl3Fb4PpptSSMs3Blkv8svVnCJ0ERUjpnTki43RvRuLIvxmrkEG60Jumm5Wmay2HcPX12d5JckbCyis_EB6qpsN-vWMEFkHggYUUE_wdHXuw9ZUtCpCvWW_jlxCWkQaimps0-fB-4o-X925pq4P2tT4peA);
+    opacity: 0.03
+    }</style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
+<!-- Full Page Loader -->
+<div id="full-page-loader" class="fixed inset-0 bg-background-light dark:bg-background-dark z-[9999] flex flex-col items-center justify-center transition-opacity duration-500">
+  <div class="mb-4 text-sage-800 dark:text-sage-100 font-serif text-2xl tracking-widest uppercase">Cafe Velvet</div>
+  <div class="w-64 h-1 bg-sage-200 dark:bg-sage-800 overflow-hidden rounded-full">
+    <div id="loader-bar" class="h-full bg-primary w-0 transition-all ease-out"></div>
+  </div>
+</div>
+<script>
+  (function() {
+    document.body.style.overflow = 'hidden';
+    const loadTime = Math.floor(Math.random() * (2000 - 1000 + 1)) + 1000;
+    
+    const bar = document.getElementById('loader-bar');
+    if(bar) {
+      bar.style.transitionDuration = loadTime + 'ms';
+      setTimeout(() => {
+        bar.style.width = '100%';
+      }, 50);
+    }
+
+    setTimeout(() => {
+      const loader = document.getElementById('full-page-loader');
+      if (loader) {
+        loader.style.opacity = '0';
+        document.body.style.overflow = '';
+        setTimeout(() => { if (loader.parentNode) loader.parentNode.removeChild(loader); }, 500);
+      }
+    }, loadTime + 100);
+  })();
+</script>
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<div class="absolute inset-0 botanical-overlay pointer-events-none"></div>
+<div class="layout-container flex h-full grow flex-col relative z-10">
+<!-- Minimalist Top Navigation -->
+<header class="flex items-center justify-between px-6 py-4 md:px-20 lg:px-40 border-b border-sage-200 dark:border-sage-800 sticky top-0 bg-background-light dark:bg-background-dark z-50">
+<div class="flex items-center gap-3">
+<div class="text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl">filter_vintage</span>
+</div>
+<h1 class="text-xl font-bold tracking-tight text-sage-800 dark:text-sage-100 uppercase">Cafe Velvet</h1>
+<span class="text-[10px] text-gray-400 dark:text-gray-600 font-normal">*Not affiliated with any business, this is an example site!</span>
+</div>
+<nav class="hidden md:flex items-center gap-8 text-sm font-semibold uppercase tracking-widest text-sage-600 dark:text-sage-400">
+<a class="hover:text-primary transition-colors" href="index.html">Home</a>
+<a class="hover:text-primary transition-colors" href="menu.html">Menu</a>
+<a class="text-primary" href="contacts.html">Contact</a>
+</nav>
+
+</header>
+<main class="max-w-5xl mx-auto w-full px-6 py-12">
+<div class="mb-12 text-center">
+<h2 class="text-4xl font-bold text-moss dark:text-background-light mb-4">Get in Touch</h2>
+<p class="text-slate-600 dark:text-slate-400 max-w-lg mx-auto">Whether you're craving a latte or looking to host an event, we'd love to hear from you. Visit us in our botanical sanctuary.</p>
+</div>
+<!-- Contact Info Section -->
+<section class="mb-16">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-primary">distance</span>
+<h3 class="text-xl font-bold text-moss dark:text-background-light">Contact Info</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="flex flex-col gap-4 rounded-2xl border border-primary/10 bg-white dark:bg-slate-800/40 p-8 shadow-sm hover:shadow-md transition-shadow">
+<div class="size-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-2xl">mail</span>
+</div>
+<div>
+<h4 class="text-lg font-bold text-moss dark:text-background-light">Email Us</h4>
+<p class="text-slate-500 dark:text-slate-400 mb-4">Our team typically responds within 2 hours.</p>
+<a class="text-primary font-semibold hover:underline" href="mailto:hello@cafevelvet.com">hello@cafevelvet.com</a>
+</div>
+</div>
+<div class="flex flex-col gap-4 rounded-2xl border border-primary/10 bg-white dark:bg-slate-800/40 p-8 shadow-sm hover:shadow-md transition-shadow">
+<div class="size-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-2xl">call</span>
+</div>
+<div>
+<h4 class="text-lg font-bold text-moss dark:text-background-light">Call Us</h4>
+<p class="text-slate-500 dark:text-slate-400 mb-4">Available for reservations and takeout orders.</p>
+<a class="text-primary font-semibold hover:underline" href="tel:+1234567890">+1 234 567 890</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Social Media Section -->
+<section class="mb-16">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-primary">share</span>
+<h3 class="text-xl font-bold text-moss dark:text-background-light">Follow Our Journey</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="flex items-center justify-between gap-4 rounded-2xl bg-white dark:bg-slate-800/40 p-6 border border-primary/10">
+<div class="flex items-center gap-4">
+<div class="size-14 rounded-xl overflow-hidden bg-slate-100 flex items-center justify-center">
+<img class="size-full object-cover" data-alt="Instagram brand logo minimalist" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwhNJMDIHo44vLObWZbfHXC83XfVTke6eNeTNLxkrYqA0EoADGAFxnjMxmFumurZyYnhKnX8ToB2yF8bsk-IQYSTkg8vhgoXLDayjPBnEW27VMdlasMPUJ_eGdJ_tSqXvodT4rXz77NioSHABSKJjOan5f_kqBSkyumxVH8IqaMxIPxopwYbUzAAM6f4H1Miu8WhKyarb9S3FTkwGu5XsYiJLOeg_fSgTlvr7Ch4PDgKRyptF18ewdpQlExq6GIZsHRs_jr-NfiQ"/>
+</div>
+<div>
+<h4 class="font-bold text-moss dark:text-background-light">Instagram</h4>
+<p class="text-sm text-slate-500 dark:text-slate-400">@cafevelvet_official</p>
+</div>
+</div>
+<button class="px-6 py-2 rounded-xl bg-moss text-white text-sm font-bold hover:bg-moss/90 transition-colors">Follow</button>
+</div>
+<div class="flex items-center justify-between gap-4 rounded-2xl bg-white dark:bg-slate-800/40 p-6 border border-primary/10">
+<div class="flex items-center gap-4">
+<div class="size-14 rounded-xl overflow-hidden bg-slate-100 flex items-center justify-center">
+<img class="size-full object-cover" data-alt="YouTube brand logo minimalist" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSCRNKmQSIUKAX9q9cTXj8iI53ETHB6w6yB9I-Y68smR--Qy4LvA7XB_mDjWeJKcfee6SdnomE6NXAwcEtoooHOIe6ucnTHI7X5C6ZKL46ZmAyAcsXHGnnrCuDM3C7mxnZ-qkEL9NcapN9kv40pIIUBSCgNqxSSRI8HhC78wRAHiwo74rQ93UruxCZADhlu01ejfRFkT3ChuoPYREMZON-rl2mgamUrsYJ0bOZ7mF-VCkS6JeIjmwR_EmdtmTD0HgsxK5lA4zb-Q"/>
+</div>
+<div>
+<h4 class="font-bold text-moss dark:text-background-light">YouTube</h4>
+<p class="text-sm text-slate-500 dark:text-slate-400">Brewing with Velvet</p>
+</div>
+</div>
+<button class="px-6 py-2 rounded-xl bg-red-600 text-white text-sm font-bold hover:bg-red-700 transition-colors">Subscribe</button>
+</div>
+</div>
+</section>
+<!-- Delivery Platforms Section -->
+<section class="mb-16">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-primary">delivery_dining</span>
+<h3 class="text-xl font-bold text-moss dark:text-background-light">Order Online</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="flex flex-col gap-6 rounded-2xl bg-cream dark:bg-background-dark/50 p-8 border-2 border-dashed border-primary/20">
+<div class="flex items-center gap-4">
+<div class="size-16 rounded-full bg-white dark:bg-slate-700 p-2 shadow-sm">
+<img class="size-full object-contain" data-alt="Zomato delivery partner logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBu5I5tm0JX8-NgKxMnsSZtkvMwQZTVaNX5ZzfwArAWf6N3S-MYsva9Ek7j-R6FDoUHySkClaecYLly5-kLsNQBm3Rfb_SyNIYetMwRtiy0ubct39NIux26_nN3M4BmU0OaZHBSY-d6d4hoSc0ob-gj6BFa8bMVRrqfXgqtrGqdN8Dx_4AmvYBTp-12fq6hnKhxrkLUMOiH8SsQY_Yo3znwsh8o1-DUDZDsWAFZhYc2ikmt_wlQi0n4i4bR_fmDfsaoEMpvlgILXA"/>
+</div>
+<div>
+<h4 class="text-lg font-bold text-moss dark:text-background-light">Zomato</h4>
+<p class="text-sm text-slate-600 dark:text-slate-400">Order Cafe Velvet online</p>
+</div>
+</div>
+<button class="w-full py-3 rounded-xl bg-primary text-white font-bold hover:shadow-lg hover:shadow-primary/30 transition-all flex items-center justify-center gap-2">
+                            Order Now <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<div class="flex flex-col gap-6 rounded-2xl bg-cream dark:bg-background-dark/50 p-8 border-2 border-dashed border-primary/20">
+<div class="flex items-center gap-4">
+<div class="size-16 rounded-full bg-white dark:bg-slate-700 p-2 shadow-sm">
+<img class="size-full object-contain" data-alt="Swiggy delivery partner logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwKZOavNiOSgHTmdL63tAhqFrsWVAe6zziyKLm8GM-e2WgZOyF12PcIejK1eH_-GDuoXLz9d_lU3JchKhof0asLriUibnIHcZzgzoUEJkS2XgUhkRnuvubJFSE89ykPSKuDwhF6c3ALgAEjZLPEHqD3-D42k9ckP1_hB1kD0yubG0VmkuO2HNI4LvJq3R7zgGYuDQPW6nzJ_lW5RagX7xVWTD40C_5fKC_YTZ14mpnNQKpiWtmbWGh3KQ4q7pelq5pZ9PJpFNYrA"/>
+</div>
+<div>
+<h4 class="text-lg font-bold text-moss dark:text-background-light">Swiggy</h4>
+<p class="text-sm text-slate-600 dark:text-slate-400">Order Cafe Velvet online</p>
+</div>
+</div>
+<button class="w-full py-3 rounded-xl bg-primary text-white font-bold hover:shadow-lg hover:shadow-primary/30 transition-all flex items-center justify-center gap-2">
+                            Order Now <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Location Map Mockup -->
+<section class="mb-12">
+<div class="rounded-3xl overflow-hidden h-[400px] relative border border-primary/10 shadow-xl group">
+<div class="absolute inset-0 bg-slate-200 dark:bg-slate-800 flex items-center justify-center">
+<img class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700" data-alt="Minimalist map showing cafe location" data-location="San Francisco" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEazgWDNYgwlPl-uYUBPgdJSaQIaCYzmtP1EGLat4z5DMhhegrVKekhgaQCdDiikERAaNHO5y1NS0OoGjFG3kbyuviEfDpOgjJ8D0UhP3jJrIkiElALUVz77H3eB5Z4pky3VHBabcVAHrXmUklQe6WggEI4EX4R8DuRN7zSVCTocPKFpqZvIsit-y-NA5mh7E-IdeJuug2DY7bJCzuVuLoi2jL8O7Y4SizBl35EG-_Pfw-K5HhuUhMIVeZZPBpmjaoest4INeBhQ"/>
+</div>
+<div class="absolute bottom-6 left-6 right-6 md:right-auto md:w-80 bg-white/90 dark:bg-background-dark/90 backdrop-blur-md p-6 rounded-2xl shadow-2xl">
+<h4 class="font-bold text-moss dark:text-background-light mb-1">Cafe Velvet HQ</h4>
+<p class="text-sm text-slate-600 dark:text-slate-400 mb-4">123 Botanical Avenue, Green District<br/>San Francisco, CA 94103</p>
+<div class="flex items-center gap-2 text-primary text-sm font-bold">
+<span class="material-symbols-outlined text-base">directions</span>
+                            Get Directions
+                        </div>
+</div>
+</div>
+</section>
+</main>
+<!-- Minimalist Footer -->
+<footer class="px-6 py-8 border-t border-sage-200 dark:border-sage-800 text-center text-sage-400 dark:text-sage-600 text-sm">
+<p>© 2025 <a href="https://www.aritive.online" target="_blank" class="hover:text-primary transition-colors underline">aritive</a>. All ingredients are locally sourced and organic.</p>
+</footer>
+</div>
+</body></html>
